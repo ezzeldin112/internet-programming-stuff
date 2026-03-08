@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #eef2ff, #f8fafc);
+    min-height: 100vh;
+    padding: 40px 20px;
+    color: #1f2937;
+}
+
+.app {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.todo-card {
+    background-color: #ffffff;
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+}
+
+.todo-card h1 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    color: #111827;
+}
+
+.subtitle {
+    color: #6b7280;
+    margin-bottom: 25px;
+}
+
+.input-section {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.input-section input {
+    flex: 1;
+    min-width: 240px;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-section input:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.12);
+}
+
+.input-section button,
+.filter-btn,
+.task-actions button {
+    cursor: pointer;
+    border: none;
+    transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.3s ease;
+}
+
+#addTaskBtn {
+    background-color: #4f46e5;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+#addTaskBtn:hover {
+    background-color: #4338ca;
+    transform: translateY(-1px);
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 22px;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 10px 14px;
+    border-radius: 999px;
+    background-color: #e5e7eb;
+    color: #111827;
+    font-size: 0.95rem;
+}
+
+.filter-btn:hover {
+    opacity: 0.9;
+}
+
+.filter-btn.active {
+    background-color: #111827;
+    color: white;
+}
+
+.sort-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sort-box label {
+    font-weight: bold;
+}
+
+.sort-box select {
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid #cbd5e1;
+    background-color: white;
+    font-size: 0.95rem;
+}
+
+.task-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px;
+    border-radius: 14px;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+}
+
+.task-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.task-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.task-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    cursor: pointer;
+    word-break: break-word;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.task-time {
+    margin-top: 6px;
+    font-size: 0.85rem;
+    color: #6b7280;
+}
+
+.task-item.completed .task-text {
+    text-decoration: line-through;
+    color: #9ca3af;
+}
+
+.task-item.completed {
+    background-color: #f1f5f9;
+    opacity: 0.92;
+}
+
+.task-actions {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.task-actions button {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    font-size: 1rem;
+    background-color: #e5e7eb;
+}
+
+.task-actions button:hover {
+    transform: scale(1.05);
+}
+
+.edit-btn:hover {
+    background-color: #fde68a;
+}
+
+.delete-btn:hover {
+    background-color: #fecaca;
+}
+
+.empty-message {
+    text-align: center;
+    color: #6b7280;
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .todo-card {
+        padding: 22px 18px;
+    }
+
+    .todo-card h1 {
+        font-size: 1.6rem;
+    }
+
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .sort-box {
+        justify-content: space-between;
+    }
+
+    .task-item {
+        flex-direction: column;
+    }
+
+    .task-actions {
+        align-self: flex-end;
+    }
+}
